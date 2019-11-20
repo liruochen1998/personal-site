@@ -18,6 +18,8 @@ function main() {
     $(`body`).append(`<section class="secondaryinfo"></section>`);
     secondaryInfo();
 
+    footer();
+
 }
 
 function navBar() {
@@ -45,12 +47,13 @@ function mainInfo() {
         <div class="column is-narrow">
             <div class="box" style="width: 300px;">
                 <img class="image" src="folder/profile_photo.JPG">
-                <p class="is-3">Ruochen Li</p>
+                <p class="is-size-4 has-text-weight-semibold has-text-centered">Ruochen Li</p>
                 <p >University of North Carolina at Chapel Hill - Class of 2021</p>
                 <p> B.S. in Computer Science </p>
                 <p> B.S. in Economics </p>
                 <a href="https://github.com/liruochen1998"><i class="fab fa-github"></i> </a>
                 <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i> </a>
+                <a href="https://liruochen1998.github.io"><i class="fas fa-rss-square"></i> </a>
             </div>
         </div>
         <div class="column">
@@ -81,6 +84,21 @@ function projects() {
 }
 
 function secondaryInfo() {
+
+}
+
+function footer() {
+
+    $(`body`).append(`
+
+    <footer class="footer">
+        <div class="has-text-centered">
+            <p>
+            by <a href="https://imlrc.com">Ruochen Li</a> @ Nov. 2019 
+            </p>
+        </div>
+    </footer>
+`);
 
 }
 
