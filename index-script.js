@@ -42,23 +42,37 @@ function mainInfo() {
     
     $(mainInfo).append(`
     <div class="columns">
-    <div class="column is-two-fifths">
-    <div class="box" style="width: 350px;">
-        <img class="image" src="folder/profile_photo.JPG">
-            <p class="is-3">Ruochen Li</p>
-            <p >University of North Carolina at Chapel Hill - Class of 2021</p>
-            <p> B.S. in Computer Science </p>
-            <p> B.S. in Economics </p>
-             <a href="https://github.com/liruochen1998"><i class="fab fa-github"></i> </a>
-             <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i> </a>
+        <div class="column is-narrow">
+            <div class="box" style="width: 300px;">
+                <img class="image" src="folder/profile_photo.JPG">
+                <p class="is-3">Ruochen Li</p>
+                <p >University of North Carolina at Chapel Hill - Class of 2021</p>
+                <p> B.S. in Computer Science </p>
+                <p> B.S. in Economics </p>
+                <a href="https://github.com/liruochen1998"><i class="fab fa-github"></i> </a>
+                <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i> </a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="box" id="projs">
+                <h1 class="title is-4"> Projects </h1>
+                
+                
+            </div>
 
 
-    </div>
-    </div>
+        </div>
     </div>
     
     
     `);
+
+    let projNum = project.length;
+    for (let i = 0; i < projNum; i++) {
+        $(`#projs`).append(`<div class="proj${i}"> <p class="is-size-5">${project[i].name} </p></div>`);
+        $(`.proj${i}`).append(`<p class=""> ${project[i].description} </p>`);
+        $(`#projs`).append(`<br>`);
+    }
 
 }
 
