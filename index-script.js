@@ -11,7 +11,6 @@ function main() {
 
 
     // footer
-    $(`body`).append(`<p> test2 </p>`);
     footer();
 }
 
@@ -31,7 +30,6 @@ function mainInfo() {
                 <a href="https://github.com/liruochen1998"><i class="fab fa-github"></i> </a>
                 <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i> </a>
                 <a href="https://liruochen1998.github.io"><i class="fas fa-rss-square"></i> </a>
-                <p> test </p>
             </div>
         </div>
     
@@ -43,7 +41,6 @@ function mainInfo() {
     $(`.main`).append(`
         <div class="box" id="projs">
             <h1 class="title is-4"> Projects </h1>
-            <p> test </p>
         </div>
     `);
     projects();
