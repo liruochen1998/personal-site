@@ -11,6 +11,7 @@ function main() {
 
 
     // footer
+    $(`body`).append(`<p> test2 </p>`);
     footer();
 }
 
