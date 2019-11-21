@@ -17,7 +17,7 @@ function main() {
 
 function mainInfo() {
     let mainInfo = `.maininfo`;
-    $(mainInfo).append(`<div class="columns"> </div>`);
+    $(`body`).append(`<div class="columns"> </div>`);
     // first column is demographic info
     $(`.columns`).append(`
         <div class="column is-narrow">
