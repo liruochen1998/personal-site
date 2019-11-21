@@ -1,4 +1,4 @@
-const project = [
+export const project = [
     {
         "name": "Tone Sequencer",
         "date": "Nov 2019",
