@@ -1,14 +1,12 @@
 import {project} from './projects.js'; 
+import {experience} from './experiences.js';
+
 function main() {
     // container for navbar
     navBar();
 
     // container for main info
-    $(`body`).append(`<section class="maininfo"></section>`);
     mainInfo();
-
-
-
 
     // footer
     footer();
@@ -16,8 +14,7 @@ function main() {
 
 
 function mainInfo() {
-    let mainInfo = `.maininfo`;
-    $(`body`).append(`<div class="columns"> </div>`);
+    $(`body`).append(`<div class="columns has-background-light"> </div>`);
     // first column is demographic info
     $(`.columns`).append(`
         <div class="column is-narrow">
@@ -27,9 +24,9 @@ function mainInfo() {
                 <p >University of North Carolina at Chapel Hill - Class of 2021</p>
                 <p> B.S. in Computer Science </p>
                 <p> B.S. in Economics </p>
-                <a href="https://github.com/liruochen1998"><i class="fab fa-github"></i> </a>
-                <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i> </a>
-                <a href="https://liruochen1998.github.io"><i class="fas fa-rss-square"></i> </a>
+                <a href="https://github.com/liruochen1998"><i class="fab fa-github">   </i> </a>
+                <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin">   </i> </a>
+                <a href="https://liruochen1998.github.io"><i class="fas fa-rss-square">   </i> </a>
             </div>
         </div>
     
@@ -46,7 +43,12 @@ function mainInfo() {
     projects();
 
     // second part is experiences
-
+    $(`.main`).append(`
+        <div class="box" id="expers">
+            <h1 class="title is-4"> Experiences </h1>
+        </div>
+    `);
+    experiences();
 
     // third part
 
@@ -68,29 +70,43 @@ function projects() {
 }
 
 function experiences() {
+    let experNum = experience.length;
+    for (let i = 0; i < experNum; i++) {
+        $(`#expers`).append(`
+            <div class="exper${i}" id="${experience[i].id}"> 
+            <p class="is-size-5 has-text-weight-semibold">${experience[i].name}</p>
+        </div>`); 
+        $(`.exper${i}`).append(`<p class="has-text-weight-light"> ${experience[i].place}  </p>`);
+        $(`.exper${i}`).append(`<p class="has-text-weight-light"> ${experience[i].time}  </p>`);
+        $(`.exper${i}`).append(`<p class="" ${experience[i].description} </p>`);
+        $(`#expers`).append(`<br>`);
+    }
 
 }
 
 function navBar() {
     $(`body`).append(`
     
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="/folder/resume.pdf">Resume</a>
-        <a class="navbar-item nav-link active" href="#">About<span class="sr-only">(current)</span></a>
-        <a class="navbar-item nav-link" href="#">Projects</a>
-        <a class="navbar-item nav-link" href="#">Experiences</a>
+        <a class="navbar-item nav-link active" id="about">About</a>
+        <a class="navbar-item nav-link" href="#projs">Projects</a>
+        <a class="navbar-item nav-link" href="#expers">Experiences</a>
     </div>
     </nav> 
     
     `);
+    $(`#about`).on("click", () => {
+        
+    });
 }
 function footer() {
     $(`body`).append(`
         <footer class="footer is-fixed-bottom">
             <div class="has-text-centered">
                 <p>
-                Designed and created by <a href="https://imlrc.com">Ruochen Li</a> @ Nov. 2019 
+                Designed and created by Ruochen Li. 
                 </p>
                 <p>
                 Powered by Netlify

@@ -50,14 +50,6 @@ export const project = [
         "id": "thegrep",
         
     },
-    {
-        "name": "",
-        "date": "",
-        "description": "",
-        "keyword": "",
-        "link": "",
-        "id": "",
-    },
 
 ]
 
