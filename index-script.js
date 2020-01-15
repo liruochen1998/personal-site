@@ -1,5 +1,7 @@
 import {project} from './projects.js'; 
-import {experience} from './experiences.js';
+import {experience} from './work.js';
+import {activity} from './activity.js';
+
 
 function main() {
     // container for navbar
@@ -45,12 +47,18 @@ function mainInfo() {
     // second part is experiences
     $(`.main`).append(`
         <div class="box" id="expers">
-            <h1 class="title is-4"> Experiences </h1>
+            <h1 class="title is-4"> Work Experiences </h1>
         </div>
     `);
     experiences();
 
-    // third part
+    // third part is activities
+    $(`.main`).append(`
+        <div class="box" id="acts">
+            <h1 class="title is-4"> Activities </h1>
+        </div>
+    `);
+    activities();
 
 
 }
@@ -76,12 +84,29 @@ function experiences() {
             <div class="exper${i}" id="${experience[i].id}"> 
             <p class="is-size-5 has-text-weight-semibold">${experience[i].name}</p>
         </div>`); 
-        $(`.exper${i}`).append(`<p class="has-text-weight-light"> ${experience[i].place}  </p>`);
+        $(`.exper${i}`).append(`<p class="has-text-weight-light"> ${experience[i].location}  </p>`);
         $(`.exper${i}`).append(`<p class="has-text-weight-light"> ${experience[i].time}  </p>`);
-        $(`.exper${i}`).append(`<p class="" ${experience[i].description} </p>`);
+        $(`.exper${i}`).append(`<p class=""> ${experience[i].description} </p>`);
         $(`#expers`).append(`<br>`);
     }
 
+}
+
+function activities() {
+    let actNum = activity.length;
+    for (let i = 0; i < actNum; i++) {
+        $(`#acts`).append(`
+            <div class="act${i}" id="${activity[i].id}"> 
+            <p class="is-size-5 has-text-weight-semibold">${activity[i].name}</p>
+        </div>`);  
+        $(`.act${i}`).append(`<p class="has-text-weight-light"> ${activity[i].location}  </p>`);
+        $(`.act${i}`).append(`<p class="has-text-weight-light"> ${activity[i].time}  </p>`);
+        $(`.act${i}`).append(`<p class="has-text-weight-light"> ${activity[i].role}  </p>`);
+        $(`.act${i}`).append(`<p class=""> ${activity[i].description} </p>`);
+        $(`#acts`).append(`<br>`);
+    
+    }
+    
 }
 
 function navBar() {
@@ -93,6 +118,7 @@ function navBar() {
         <a class="navbar-item nav-link active" id="about">About</a>
         <a class="navbar-item nav-link" href="#projs">Projects</a>
         <a class="navbar-item nav-link" href="#expers">Experiences</a>
+        <a class="navbar-item nav-link" href="#acts">Activities</a>
     </div>
     </nav> 
     

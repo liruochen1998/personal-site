@@ -50,6 +50,15 @@ export const project = [
         "id": "thegrep",
         
     },
+    {
+        "name": "Ticker Tracker",
+        "date": "December 2019",
+        "description": "Ticker Tracker is designed from the idea that there are too many ticker/stock websites online but most of them needs to be paid to get access to some advanced feature such as technical analysis. However, there are a lot of apis that people can use directly but people in financial realm don't always have a good technical background. Thus, this is a wrapper around the api.",
+        "keyword": "React, Javascript, APIs",
+        "link": "",
+        "id": "tickertracker",
+
+    }
 
 ]
 
