@@ -19,6 +19,6 @@
   "homepage": "https://github.com/liruochen1998/personal-site#readme",
   "dependencies": {
     "@types/jquery": "^3.3.31",
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.27.10"
   }
 }
